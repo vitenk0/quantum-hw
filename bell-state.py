@@ -1,4 +1,5 @@
 from qiskit import QuantumCircuit
+import qiskit
 from qiskit.primitives import StatevectorSampler
 
 # Build a Bell state
@@ -12,3 +13,4 @@ sampler = StatevectorSampler()
 result = sampler.run([qc], shots=1024).result()
 
 print(result[0].data.meas.get_counts())
+print(qiskit.__version__)
