@@ -6,6 +6,8 @@ from qiskit.visualization import plot_bloch_vector
 import matplotlib.pyplot as plt
 import numpy as np
 
+theta = np.pi/2
+
 #1. 
 qc1 = QuantumCircuit(4)
 qc1.h(0)
@@ -17,7 +19,6 @@ psi1 = Statevector.from_instruction(qc1)
 plot_bloch_multivector(psi1, title="Problem 1")
 
 #2.
-theta = np.pi/2
 qc2 = QuantumCircuit(3)
 qc2.rx(theta, 0)
 qc2.ry(theta, 1)
@@ -59,5 +60,5 @@ for i, (label, c) in enumerate(circ):
     plot_bloch_vector(bloch, ax=ax)
     ax.set_title(label, pad=40)
 
-plt.subplots_adjust(left=0.02, right=0.98, top=0.90, bottom=0.05, wspace=0.15)
+plt.subplots_adjust(left=0, right=1, top=0.90, bottom=0.05, wspace=0.15)
 plt.show()
